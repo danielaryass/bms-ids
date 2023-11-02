@@ -77,7 +77,3 @@ export async function POST(req) {
     return NextResponse.error('Terjadi kesalahan dalam permintaan.');
   }
 }
-
-export async function getCookies() {
-  return localStorage.setItem('cookies', savedCookies);
-}

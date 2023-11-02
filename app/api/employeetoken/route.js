@@ -1,15 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
-import { cookies } from 'next/headers'
+import { cookies } from 'next/headers';
 export async function GET(req) {
   try {
     const nextRequestConfig = {
       method: 'GET',
-      url: 'https://bms.idsystems.co.id/api/resource/User?limit_page_length=200&fields=["name", "full_name","user_image"]',
+      url: 'https://bms.idsystems.co.id/api/resource/User',
       headers: {
-        Cookie: cookies(req.headers.cookie),
+        Authorization: `token ${process.env.NEXT_PUBLIC_API_KEY}:${process.env.NEXT_PUBLIC_SECRET_KEY}`,
       },
-      cache: 'force-cache',
     };
     const response = await axios(nextRequestConfig);
     return NextResponse.json(

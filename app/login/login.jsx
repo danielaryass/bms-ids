@@ -13,8 +13,8 @@ export default function Login() {
       password: passwordRef.current.value,
     };
     const response = await axios.post('/api/auth', data);
-    console.log(response)
-    router.push('/')
+    localStorage.setItem('fullname', response.data.data.full_name);
+    router.push('/dashboard')
   };
   return (
     <section className='w-full flex justify-center items-center my-auto px-2'>
