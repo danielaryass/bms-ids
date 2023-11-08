@@ -13,14 +13,22 @@ export default function Page({ params }) {
   const goBack = () => router.back();
 
   if (error) return <div>Error loading data</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return (
+    <div className='min-h-screen flex items-center justify-center'>
+      <div className='lds-ring scale-125'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  );
 
   const birthDate = new Date(data?.data.birth_date);
   const formattedDate = `${birthDate.getDate()}-${
     birthDate.getMonth() + 1
   }-${birthDate.getFullYear()}`;
 
-  console.log(data);
   return (
     <div className='pb-20'>
       <div className='bg-red-600 py-4 px-4 flex text-white items-center'>

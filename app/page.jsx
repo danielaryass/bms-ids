@@ -1,10 +1,6 @@
 'use client';
 import axios from 'axios';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { FaPeopleGroup } from 'react-icons/fa6';
-import { useRouter } from 'next/navigation';
-
 export default function Home() {
   // const [data, setData] = useState([]);
   // const [dataWhistle, setDataWhistle] = useState([]);
@@ -28,11 +24,11 @@ export default function Home() {
   //   setDataWhistle(response.data);
   //   console.log(response.data);
   // };
-  const router = useRouter();
-  const isLogin = localStorage.getItem('fullname');
-  if (!isLogin) {
-    router.push('/login');
-  }
+  // const router = useRouter();
+  // const isLogin = localStorage.getItem('fullname');
+  // if (!isLogin) {
+  //   router.push('/login');
+  // }
 
   return (
     // <main className='flex flex-col'>
@@ -98,9 +94,9 @@ export default function Home() {
     //     </ul>
     //   </div> */}
     // </main>
-    <div className=''>
-      <h2>silahkan login</h2>
-      <Link href='/login' className='text-3xl'>
+    <div className='w-full min-h-screen flex justify-center items-center flex-col'>
+      <h2 className='text-2xl text-center'>Anda belum login, Silahkan login terlebih dahulu</h2>
+      <Link href='/login' className='text-3xl bg-red-600 text-white rounded-lg px-3 py-2'>
         LOGIN
       </Link>
     </div>

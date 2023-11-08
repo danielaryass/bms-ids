@@ -27,6 +27,7 @@ export default function Home() {
     setDataWhistle(response.data);
     console.log(response.data);
   };
+
   return (
     <main className='flex flex-col'>
       <div className='w-full max-h-28 bg-red-600 p-4'>
@@ -91,5 +92,6 @@ export default function Home() {
         </ul>
       </div> */}
     </main>
+
   );
 }
